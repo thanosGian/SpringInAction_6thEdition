@@ -45,6 +45,7 @@ public class DesignTacoController {
                     filterByType((List<Ingredient>) ingredients, type));
         }
     }
+
     @GetMapping
     public String showDesignForm(Model model) {
         model.addAttribute("taco", new Taco());
@@ -59,6 +60,8 @@ public class DesignTacoController {
         // Save the taco...
         // We'll do this in chapter 3
         log.info("Processing taco: " + taco);
+
+
 
         return "redirect:/orders/current";
     }

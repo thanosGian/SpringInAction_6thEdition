@@ -33,8 +33,9 @@ public class OrderController {
         if (errors.hasErrors()) {
             return "orderForm";
         }
-
+        log.info("Processing order: " + order);
         orderRepo.save(order);
+        log.info("Order saved: " + order);
         sessionStatus.setComplete();
 
         return "redirect:/";
